@@ -9,6 +9,10 @@ public class NavigationHelper extends HelperBase {
       super(wd); //vizivaetsa konstruktor bazovogo klassa
    }
 
+   public void goToHomePage() {
+      click(By.linkText("home page"));
+   }
+
    public void gotoGroupPage() {
       click(By.linkText("groups"));
    }
