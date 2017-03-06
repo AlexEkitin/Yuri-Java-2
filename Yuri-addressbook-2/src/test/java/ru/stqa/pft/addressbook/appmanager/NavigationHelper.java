@@ -10,11 +10,20 @@ public class NavigationHelper extends HelperBase {
       super(wd); //vizivaetsa konstruktor bazovogo klassa
    }
 
-   public void goToHomePage() {
+
+   public void gotoGroupPage() {
+      if (wd.findElement(By.tagName("h1")).getText().equals("Groups") &&
+              isElementPresent(By.name("new"))) {
+         return;
+      }
+      click(By.linkText("groups"));
+   }
+
+   public void goToHomePage() { //proveriaem, nahodimsa li mi uze ne etoi stranice
+      if (isElementPresent(By.id("maintable"))) {
+         return;
+      }
       click(By.linkText("home page"));
    }
 
-   public void gotoGroupPage() {
-      click(By.linkText("groups"));
-   }
 }
